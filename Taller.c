@@ -10,14 +10,14 @@ int main (int argc, char *argv[]) {
 
     int len = strlen(nombre) - 1;
     int longitudPalabraMasLarga = 0, longitudPalabraMasCorta = 50, longitudPalabraActual = 0;
-    int palabraCount = 0;
+    int PalabraContador=0;
    
     for (int i = 0; i < len; i++) {
         if (nombre[i] != ' ' && nombre[i] != '\n' && nombre[i] != '\t') {
             longitudPalabraActual++;  
         } else {
             if (longitudPalabraActual > 0) {
-                palabraCount++;
+                PalabraContador=PalabraContador+1;
                 if (longitudPalabraActual > longitudPalabraMasLarga) {
                     longitudPalabraMasLarga = longitudPalabraActual;  
                 }
@@ -30,7 +30,6 @@ int main (int argc, char *argv[]) {
     }
 
     if (longitudPalabraActual > 0) {
-        palabraCount++;
         if (longitudPalabraActual > longitudPalabraMasLarga) {
             longitudPalabraMasLarga = longitudPalabraActual;
         }
@@ -39,7 +38,7 @@ int main (int argc, char *argv[]) {
         }
     }
 
-    printf("Numero de palabras: %d\n", palabraCount);
+    printf("Numero de palabras: %d\n", PalabraContador=PalabraContador+1);
     printf("La palabra mas larga: %d\n", longitudPalabraMasLarga);
     printf("La palabra mas corta: %d\n", longitudPalabraMasCorta);
     return 0;
