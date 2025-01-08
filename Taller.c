@@ -13,7 +13,7 @@ int main (int argc, char *argv[]) {
     int PalabraContador=1;
    
     for (int i = 0; i < len; i++) {
-        if (nombre[i] != ' ' && nombre[i] != '\n' && nombre[i] != '\t') {
+        if (nombre[i] != ' ' && nombre[i] != '\n' && nombre[i] != '\0') {
             longitudPalabraActual++;  
         } else {
             if (longitudPalabraActual > 0) {
