@@ -38,7 +38,7 @@ int main (int argc, char *argv[]) {
         }
     }
 
-    printf("Numero de palabras: %d\n", PalabraContador=PalabraContador+1);
+    printf("Numero de palabras: %d\n", PalabraContador);
     printf("La palabra mas larga: %d\n", longitudPalabraMasLarga);
     printf("La palabra mas corta: %d\n", longitudPalabraMasCorta);
     return 0;
