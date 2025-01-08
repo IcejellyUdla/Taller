@@ -10,7 +10,7 @@ int main (int argc, char *argv[]) {
 
     int len = strlen(nombre) - 1;
     int longitudPalabraMasLarga = 0, longitudPalabraMasCorta = 50, longitudPalabraActual = 0;
-    int PalabraContador=0;
+    int PalabraContador=1;
    
     for (int i = 0; i < len; i++) {
         if (nombre[i] != ' ' && nombre[i] != '\n' && nombre[i] != '\t') {
