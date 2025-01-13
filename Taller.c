@@ -1,45 +1,43 @@
-
 #include <stdio.h>
 #include <string.h>
 
-int main (int argc, char *argv[]) {
-    char nombre[50];
+int main(int argc, char *argv[])
+{
+    int PalabraMasLarga = 0, PalabraMasCorta = 10, longitudPalabraActual = 0;
+    int PalabraContador = 0;
+    char nombre[500];
     printf("ingrese el texto: ");
     fflush(stdin);
-    fgets(nombre, 50, stdin);
-
+    fgets(nombre, 500, stdin);
     int len = strlen(nombre) - 1;
-    int longitudPalabraMasLarga = 0, longitudPalabraMasCorta = 50, longitudPalabraActual = 0;
-    int PalabraContador=1;
-   
-    for (int i = 0; i < len; i++) {
-        if (nombre[i] != ' ' && nombre[i] != '\n' && nombre[i] != '\0') {
-            longitudPalabraActual++;  
-        } else {
-            if (longitudPalabraActual > 0) {
-                PalabraContador=PalabraContador+1;
-                if (longitudPalabraActual > longitudPalabraMasLarga) {
-                    longitudPalabraMasLarga = longitudPalabraActual;  
-                }
-                if (longitudPalabraActual < longitudPalabraMasCorta) {
-                    longitudPalabraMasCorta = longitudPalabraActual; 
-                }
-                longitudPalabraActual = 0;  
+    for (int i = 0; i <= len; i++)
+    {
+        if (nombre[i] != ' ' && nombre[i] != '\0'&& nombre[i] != '\n')
+        {
+            longitudPalabraActual = longitudPalabraActual + 1;
+        }
+        else
+        {
+            PalabraContador = PalabraContador + 1;
+            if (longitudPalabraActual > PalabraMasLarga)
+            {
+                PalabraMasLarga = longitudPalabraActual;
             }
+            else if (longitudPalabraActual < PalabraMasCorta)
+            {
+                PalabraMasCorta = longitudPalabraActual;
+            }
+            longitudPalabraActual = 0;
         }
     }
 
-    if (longitudPalabraActual > 0) {
-        if (longitudPalabraActual > longitudPalabraMasLarga) {
-            longitudPalabraMasLarga = longitudPalabraActual;
-        }
-        if (longitudPalabraActual < longitudPalabraMasCorta) {
-            longitudPalabraMasCorta = longitudPalabraActual;
-        }
+    if (len == 0)
+    {
+        printf("No se ingreso ningun texto. Saliendo del programa.\n");
+        return 0;
     }
-
     printf("Numero de palabras: %d\n", PalabraContador);
-    printf("La palabra mas larga: %d\n", longitudPalabraMasLarga);
-    printf("La palabra mas corta: %d\n", longitudPalabraMasCorta);
+    printf("La palabra mas larga: %d\n", PalabraMasLarga);
+    printf("La palabra mas corta: %d\n", PalabraMasCorta);
     return 0;
-}
+}   
